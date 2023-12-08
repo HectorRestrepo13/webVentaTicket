@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./asset/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row headerFila">
+        <div class="col-1 headerLogo">
+          <img
+            src="./asset/imagenes/logo.png"
+            alt="logo"
+            srcset="./asset/imagenes/logo.png"
+          />
+        </div>
+        <div class="col-11 headerCol">
+          <div class="headerTitulo">
+            <h1>SUPERFLIGHT</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-md" style="display: flex; padding-top: 30px">
+      <div class="row filaVenta">
+        <div class="col-sm-12 col-md-10 col-lg-3 col-xl-3 selecionarCuidad">
+          <div class="selecionarTitula">
+            <h2>Vuelos Baratos</h2>
+          </div>
+          <!--aca va el div donde va ir checkbox para selecionar si solo es ida o vuelta-->
+          <div class="selecionarIdaOVuelta">
+            <span
+              ><input
+                onchange="deseleccionarOtro(this,1)"
+                id="checkbox1"
+                type="checkbox"
+              />
+              Solo ida
+            </span>
+            <span
+              ><input
+                onchange="deseleccionarOtro(this,2)"
+                id="checkbox2"
+                type="checkbox"
+              />
+              Ida y vuelta</span
+            >
+          </div>
+          <!------------------------------------------------------------------------------>
+          <!--aca voy hacer para que escoja la cuidad de destino un select-->
+          <div class="escogerCuidad" style="padding: 10px">
+            <select
+              id="SelecionCuidad"
+              class="form-select"
+              aria-label="Default select example"
+            >
+              <option selected>Selecione Destino</option>
+              <option value="medellin">Medellin $100.000</option>
+              <option value="cali">Cali $50.000</option>
+              <option value="barranquilla">Barranquilla $250.000</option>
+              <option value="pereira">Pereira $15.000</option>
+              <option value="bogota">Bogota $80.000</option>
+            </select>
+          </div>
+          <!------------------------------------------------------------------------------>
+          <!--aca voy a colocar La clase-->
+          <div class="escogerClase" style="padding: 10px">
+            <select
+              id="selecionarClase"
+              class="form-select"
+              aria-label="Default select example"
+            >
+              <option selected>Selecione La Clase</option>
+              <option value="normal">Normal $0</option>
+              <option value="ejecutivo">Ejecutivo $20.000</option>
+              <option value="vip">VIP $40.000</option>
+            </select>
+          </div>
+          <!------------------------------------------------------------------------------>
+          <!--aca voy hacer un input para que diga cuantos ticket va comprar-->
+          <div class="cuantosViajan">
+            <label for="">Cuantos ticket</label>
+            <input id="cantidadTicket" type="number" />
+            <label for="">Peso de las Maletas</label>
+            <input id="PesoMaletas" type="number" />
+          </div>
+          <!------------------------------------------------------------------------------>
+          <!--aca voy a colocar para que ingrese la fecha de viaje-->
+          <div class="fechaViaje">
+            <div class="fechaSalida">
+              <label for="">Fecha Salida</label>
+              <input id="fechaSalida" type="date" />
+            </div>
+            <div class="fechaSalida">
+              <label for="">Fecha Devuelta</label>
+              <input id="fechaDevuelta" type="date" />
+            </div>
+          </div>
+          <!------------------------------------------------------------------------------>
+          <!--aca voy a colocar el boton para pagar factura-->
+          <div class="btnn_enviar">
+            <button id="btn_pagar" type="button" class="btn btn-light">
+              Pagar
+            </button>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8 contenedorFactura">
+          <!--aca voy a ir colocando todo lo de la factura-->
+          <div
+            class="facturaTitulo"
+            style="
+              display: flex;
+              justify-content: center;
+              font-family: Arial, Helvetica, sans-serif;
+            "
+          >
+            <h2>Ticket</h2>
+          </div>
+          <!------------------------------------------------------>
+          <!--aca voy a ir colocando para que coloque los nombre-->
+          <div class="facturaDatos" style="display: flex">
+            <span>
+              <label style="margin: 5px" for="">Nombre</label
+              ><input id="nombreCliente" type="text"
+            /></span>
+
+            <span style="margin-left: 85px">
+              <label style="margin: 5px" for="">Cudula</label
+              ><input id="cedulaCliente" type="text"
+            /></span>
+          </div>
+          <!------------------------------------------------------>
+          <div class="facturaDatosPeso">
+            <div id="facturaCantidadPasajeros" class="facturaCantidadPasajeros">
+              <p>Total de Ticket:</p>
+            </div>
+            <div id="facturaExcede" class="facturaExcede">
+              <p>Peso excedido :</p>
+            </div>
+            <div id="facturaPesoMaleta" class="facturaPesoMaleta">
+              <p>Peso total que pueden llevar :</p>
+            </div>
+          </div>
+          <!------------------------------------------------------>
+          <!--aca dire el total apagar-->
+          <div class="facturaDatosPeso">
+            <div id="facturaCantidadPagar" class="facturaCantidadPagar">
+              <p>Valor del vuelo:</p>
+            </div>
+            <div id="facturaPagarExtraPeso" class="facturaPagarExtraPeso">
+              <p>Valor extra por peso de maleta:</p>
+            </div>
+          </div>
+          <!------------------------------------------------------>
+          <!--aca voy a colocar la fecha-->
+          <div class="facturaDatosPeso">
+            <div id="facturaFechaIda" class="facturaFechaIda">
+              <p>Fecha de Vuelo:</p>
+            </div>
+            <div id="facturaFechaRegreso" class="facturaFechaRegreso"></div>
+          </div>
+          <!------------------------------------------------------>
+          <!--aca voy a colocar la Clase-->
+          <div class="facturaDatosPeso">
+            <div id="facturaClase" class="facturaFechaIda">
+              <p>Clase:</p>
+            </div>
+          </div>
+          <!------------------------------------------------------>
+          <!--aca voy a colocar el total apagar-->
+          <div class="facturaTotalPagar">
+            <div id="facturaTotalPagar" class="fecturaTotal">
+              <p>Total Apagar:</p>
+            </div>
+          </div>
+          <!------------------------------------------------------>
+        </div>
+      </div>
+      <div class="publicidad">
+        <div class="imagen1">
+          <img
+            src="./asset/imagenes/imagenPubli.png"
+            class="img-fluid"
+            alt="./asset/imagenes/imagenPubli.png"
+          />
+        </div>
+        <div class="imagen1">
+          <img
+            src="./asset/imagenes/imagenPubli.png"
+            class="img-fluid"
+            alt="./asset/imagenes/imagenPubli.png"
+          />
+        </div>
+        <div class="imagen1">
+          <img
+            src="./asset/imagenes/imagenPubli.png"
+            class="img-fluid"
+            alt="./asset/imagenes/imagenPubli.png"
+          />
+        </div>
+      </div>
+    </div>
+
+    <script src="./main.js"></script>
+    <script src="./asset/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

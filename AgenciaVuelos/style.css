@@ -1,0 +1,102 @@
+body {
+  background-color: rgb(217, 237, 237);
+}
+.headerLogo {
+  display: flex;
+  align-items: center;
+
+  justify-content: center;
+}
+.headerFila {
+  height: 120px;
+  display: flex;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+.headerCol {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.filaVenta {
+  width: 1000px;
+}
+.publicidad {
+  width: 300px;
+}
+.selecionarCuidad {
+  background-color: rgb(42, 42, 161);
+  border-radius: 3%;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+.selecionarTitula {
+  display: flex;
+  justify-content: center;
+}
+.selecionarTitula h2 {
+  color: aliceblue;
+  font-size: 20px;
+}
+
+.selecionarIdaOVuelta {
+  display: flex;
+  justify-content: space-between;
+  color: aliceblue;
+}
+.cuantosViajan {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  color: aliceblue;
+}
+.cuantosViajan input {
+  border-radius: 10px;
+  flex: 1 1 100%;
+}
+
+.contenedorFactura {
+  background-color: rgb(206, 216, 216);
+  margin-left: 20px;
+  border-radius: 2%;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+.facturaDatosPeso {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 10px;
+  margin-top: 20px;
+  font-size: 18px;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.facturaTotalPagar {
+  display: flex;
+  justify-content: center;
+  margin-left: 10px;
+  margin-top: 20px;
+  font-size: 18px;
+  font-family: "Times New Roman", Times, serif;
+}
+.fechaViaje {
+  color: aliceblue;
+  display: flex;
+  flex-direction: column;
+}
+.fechaSalida {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+.fechaSalida input {
+  border-radius: 5px;
+}
+.btnn_enviar {
+  margin: 18px;
+}
+.btnn_enviar button {
+  width: 100%;
+}
+.imagen1 {
+  margin-bottom: 18px;
+}
